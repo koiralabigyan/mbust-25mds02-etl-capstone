@@ -34,11 +34,10 @@ with DAG(
         sql="sql/gold_dim_product.sql",
     )
 
-    # 4️⃣ Dim Customer
     dim_customer = SnowflakeOperator(
         task_id="dim_customer",
         snowflake_conn_id="snowflake_default",
-        sql="sql/gold_dim_customer.sql",
+        sql="sql/gold_dim_customer_scd2.sql",
     )
 
     # 5️⃣ Dim Date
